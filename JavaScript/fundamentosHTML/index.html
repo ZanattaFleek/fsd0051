@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <style>
+        label {
+            color: #54d154
+        }
+
+        .novaLinha {
+            display: block;
+        }
+    </style>
+
+    <script lang="javascript">
+
+        function calcular() {
+
+            var txtEtanol = document.getElementById('txtEtanol').value
+            var kmEtanol = document.getElementById('kmEtanol').value
+            var txtGasolina = document.getElementById('txtGasolina').value
+
+            var vrEtanol = parseFloat(txtEtanol)
+            var kmEtanol = parseFloat(kmEtanol)
+            var vrGasolina = parseFloat(txtGasolina)
+
+            var kmGasolina = vrGasolina / (vrEtanol / kmEtanol)
+
+            document.getElementById('txtResultado').value = "KM na Gasolina".concat(kmGasolina)
+
+        }
+
+        function calcular_forma_resumida() {
+
+            var vrEtanol = parseFloat(document.getElementById('txtEtanol').value)
+            var kmEtanol = parseFloat(document.getElementById('kmEtanol').value)
+            var vrGasolina = parseFloat(document.getElementById('txtGasolina').value)
+
+            var kmGasolina = vrGasolina / (vrEtanol / kmEtanol)
+
+            document.getElementById('txtResultado').value = "KM na Gasolina".concat(kmGasolina)
+
+        }
+
+        function calcular_forma_mais_resumida() {
+
+            var kmGasolina = parseFloat(document.getElementById('txtGasolina').value) / (parseFloat(document.getElementById('txtEtanol').value) / parseFloat(document.getElementById('kmEtanol').value))
+
+            document.getElementById('txtResultado').value = "KM na Gasolina".concat(kmGasolina)
+
+        }
+
+        function calcular_forma_hyper_resumida() {
+
+            document.getElementById('txtResultado').value = "KM na Gasolina".concat(parseFloat(document.getElementById('txtGasolina').value) / (parseFloat(document.getElementById('txtEtanol').value) / parseFloat(document.getElementById('kmEtanol').value)))
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <label for="txtGasolina">Valor da Gasolina</label>
+    <input class="novaLinha" type="text" id="txtGasolina" />
+
+    <label for="txtEtanol">Valor do Etanol</label>
+    <input class="novaLinha" type="text" id="txtEtanol" />
+
+    <label for="kmEtanol">Média KM no Etanol</label>
+    <input class="novaLinha" type="text" id="kmEtanol" />
+
+    <input type="button" value="Calcular" onclick="calcular()" />
+
+    <input class="novaLinha" type="text" id="txtResultado" disabled />
+
+</body>
+
+<footer>
+
+</footer>
+
+</html>
