@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script>
+        let contador = 0
+        function executarSoma() {
+
+            const txtNumero01 = document.getElementById('txtNumero01')
+            const txtNumero02 = document.getElementById('txtNumero02')
+
+            const txtResultado = document.getElementById('txtResultado')
+
+            const vrNumero01 = parseFloat(txtNumero01.value)
+            const vrNumero02 = parseFloat(txtNumero02.value)
+
+            txtResultado.value = (vrNumero01 + vrNumero02).toFixed(2)
+
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>Calculadora<div>Científica</div>
+    </h1>
+
+    <label for="txtNumero01">Número 1</label>
+    <input type="text" id="txtNumero01" />
+    <label for="txtNumero02">Número 2</label>
+    <input type="text" id="txtNumero02" />
+    <input type="button" id="btnCalcular" value="Somar" onclick="executarSoma()" />
+
+    <input type="text" id="txtResultado" disabled />
+
+</body>
+
+</html>
