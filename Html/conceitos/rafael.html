@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+    <script>
+        function btSalvar() {
+            const txtNome = document.getElementById('txtNome')
+            const lblErroNome = document.getElementById('lblErroNome')
+
+            if (txtNome.value.length === 0) {
+                lblErroNome.innerHTML = "Campo Nome Está Vazio"
+            } else {
+                lblErroNome.innerHTML = ''
+            }
+        }
+
+        function permitirNumeros(ev) {
+            const tecla = ev.key
+
+            if (!"0123456789-".includes(tecla)) {
+                event.preventDefault()
+            }
+
+        }
+
+        function exibirOnChange() {
+            console.log('Aconteceu o On Change')
+        }
+
+        function exibirOnInput() {
+            console.log('Aconteceu o On Input')
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1>1º Exercício sobre HTML</h1>
+    <h2>Preenche os dados abaixo:</h2>
+
+    <div class="inputbox">
+        <label for="txtNome">Nome:</label>
+        <input type="text" id="txtNome" />
+        <label for="txtNome" id="lblErroNome"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCPF">CPF:</label>
+        <input type="text" id="txtCPF" maxlength="11" placeholder="Obrigatório" autofocus>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEndereco">Endereço:</label>
+        <input type="text" id="txtEndereco">
+        <label for="txtNumero">Numero:</label>
+        <input type="number" id="txtNumero">
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtComplemento">Complemento:</label>
+        <input type="text" id="txtComplemento">
+        <label for="txtBairro">Bairro:</label>
+        <input type="text" id="txtBairro">
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCidade">Cidade:</label>
+        <input type="text" id="txtCidade">
+        <label for="txtUF">Selecione o Estado:</label>
+        <select>
+            <option value=""></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espirito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtcep">Cep:</label>
+        <input type="text" id="cep" maxlength="9" placeholder="35500-000" autofocus oninput="exibirOnInput()"
+            onkeypress="permitirNumeros(event)" onchange="exibirOnChange()">
+        <label for="txtTelefone">Telefone:</label>
+        <input type="tel" id="Telefone">
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtIdade">Idade:</label>
+        <input type="text" id="Idade">
+
+        <label for="txtEstudante">Estudante:</label>
+        <input type="radio" name="optEstudante" value="S">SIM
+        <input type="radio" name="optEstudante" value="N">NÃO
+
+        <label for="txtEstudante">Trabalha:</label>
+        <input type="radio" name="optTrabalhador" value="S">SIM
+        <input type="radio" name="optTrabalhador" value="N">NÃO
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtRendaMensal">Renda Mensal:</label>
+        <input type="number" id="RendaMensal">
+
+        <label for="txtDataDeNascimento">Data de Nascimento:</label>
+        <input type="date" id="date">
+
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEstadoCivil">Estado do Civil:</label>
+        <select>
+            <option value=""></option>
+            <option value="">Solteiro</option>
+            <option value="">Casado</option>
+            <option value="">Divorciado</option>
+            <option value="">Viúvo</option>
+        </select>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEmail">Email:</label>
+        <input type="email" id="Email">
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <button onclick="btSalvar()">Salvar</button>
+    </div>
+
+</body>
+
+</html>
