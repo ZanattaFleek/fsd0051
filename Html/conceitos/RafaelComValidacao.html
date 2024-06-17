@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+    <script src="./validacoes.js"></script>
+
+    <script>
+        function btSalvar() {
+
+            validarVazio('txtNome', 'lblErroNome', 'Preencha o campo nome')
+            validarVazio('txtEndereco', 'lblErroEndereco', 'Preencha o campo endereço')
+            validarVazio('txtCPF', 'lblErroCPF', 'Preencha o campo CPF')
+            validarVazio('txtUF', 'lblErroUF', 'Preencha o campo UF')
+            // validarVazio('optEstudante', 'lblErroEstudante', 'Preencha o campo Estudante')
+            validarSomenteNumeros('txtNumero', 'lblErroNumero', 'Campo número deve ser preenchido e diferente de 0')
+
+        }
+
+        function permitirNumeros(ev) {
+            const tecla = ev.key
+
+            if (!"0123456789-".includes(tecla)) {
+                event.preventDefault()
+            }
+
+        }
+
+        function exibirOnChange() {
+            console.log('Aconteceu o On Change')
+        }
+
+        function exibirOnInput() {
+            console.log('Aconteceu o On Input')
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+    <h1>1º Exercício sobre HTML</h1>
+    <h2>Preenche os dados abaixo:</h2>
+
+    <div class="inputbox">
+        <label for="txtNome">Nome:</label>
+        <input type="text" id="txtNome" />
+        <label for="txtNome" id="lblErroNome"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCPF">CPF:</label>
+        <input type="text" id="txtCPF" maxlength="11" placeholder="Obrigatório" autofocus />
+        <label for="txtCPF" id="lblErroCPF"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEndereco">Endereço:</label>
+        <input type="text" id="txtEndereco">
+        <label for="txtEndereco" id="lblErroEndereco"></label>
+        <label for="txtNumero">Numero:</label>
+        <input type="number" id="txtNumero" oninput="exibirOnInput()" onkeypress="permitirNumeros(event)"
+            onchange="exibirOnChange()">
+        <label for="txtNumero" id="lblErroNumero"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtComplemento">Complemento:</label>
+        <input type="text" id="txtComplemento">
+        <label for="txtComplemento" id="lblErroComplemento"></label>
+        <label for="txtBairro">Bairro:</label>
+        <input type="text" id="txtBairro">
+        <label for="txtBairro" id="lblErroBairro"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCidade">Cidade:</label>
+        <input type="text" id="txtCidade">
+        <label for="txtCidade" id="lblErroCidade"></label>
+        <label for="txtUF">Selecione o Estado:</label>
+        <select id="txtUF">
+            <option value=""></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espirito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+        <label for="txtUF" id="lblErroUF"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtcep">Cep:</label>
+        <input type="text" id="cep" maxlength="9" placeholder="35500-000" autofocus oninput="exibirOnInput()"
+            onkeypress="permitirNumeros(event)" onchange="exibirOnChange()">
+        <label for="txtTelefone">Telefone:</label>
+        <input type="tel" id="Telefone">
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtIdade">Idade:</label>
+        <input type="text" id="Idade" oninput="exibirOnInput()" onkeypress="permitirNumeros(event)"
+            onchange="exibirOnChange()">
+
+
+        <label for="txtEstudante">Estudante:</label>
+        <input type="radio" name="optEstudante" id="optEstudante" value="N">Não
+        <input type="radio" name="optEstudante" id="optEstudante" value="S">Sim
+        <label for="txtEstudante" id="lblErroEstudante"></label>
+
+        <label for="txtEstudante">TRABALHA:</label>
+        <input type="radio" name="optTrabalhador" value="S">Sim
+        <input type="radio" name="optTrabalhador" value="N">Não
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtRendaMensal">Renda Mensal:</label>
+        <input type="number" id="RendaMensal">
+
+        <label for="txtDataDeNascimento">Data de Nascimento:</label>
+        <input type="date" id="date">
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEstadoCivil">Estado do Civil:</label>
+        <select>
+            <option value=""></option>
+            <option value="">Solteiro(a)</option>
+            <option value="">Casado(a)</option>
+            <option value="">Divorciado(a)</option>
+            <option value="">Viúvo(a)</option>
+        </select>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEmail">Email:</label>
+        <input type="text" id="Email" maxlength="60" size='65'>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <button onclick="btSalvar()">Salvar</button>
+    </div>
+
+</body>
+
+</html>
