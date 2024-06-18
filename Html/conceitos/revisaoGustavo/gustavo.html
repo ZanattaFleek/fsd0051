@@ -2,9 +2,9 @@
 
 <head>
 
-    <script src="gustavo.js"></script>
-
     <link rel="stylesheet" href="gustavo.css">
+
+    <script src="gustavo.js"></script>
 
 </head>
 
@@ -19,20 +19,33 @@
     <p>Parágrafo de textos</p>
     <p>Parágrafo de textos</p>
 
-    <input type="text">
-    <input type="checkbox">
-    <input type="radio">
+    <p>Exemplo Text</p>
+    <label>Nome: </label>
+    <input type="text" id="txtNome">
+
+    <p>Exemplo de Cores</p>
     <input type="color" id="txtCorDoObjeto">
+
+    <p>Outros Exemplos</p>
+    <input type="radio">
+    <input type="checkbox">
     <input type="date">
     <input type="number">
 
-    <input type="button" onclick="alterarTitulo()" value="Alterar Título" />
+    <p>Botões:</p>
+    <input type="button" id="btAlterarTitulo" onclick="alterarTitulo()" value="Alterar Título"
+        onmouseleave="VoltarCorBotao('btAlterarTitulo')" onmouseover="AlterarCorBotao('btAlterarTitulo')" />
 
-    <input type="button" onclick="alterarParagrafos()" value="Alterar Parágrafos" />
+    <input type="button" id="btAlterarParagrafos" onclick="alterarParagrafos()" value="Alterar Parágrafos"
+        onmouseleave="VoltarCorBotao('btAlterarParagrafos')" onmouseover="AlterarCorBotao('btAlterarParagrafos')" />
+
+    <input type="button" id="btExibirNome" onclick="exibirNome()" onmouseleave="VoltarCorBotao('btExibirNome')"
+        onmouseover="AlterarCorBotao('btExibirNome')" value="Exibir Nome" />
 
 </body>
 
 <footer>
+
 
 </footer>
 

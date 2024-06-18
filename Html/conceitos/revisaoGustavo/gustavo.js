@@ -16,3 +16,19 @@ function alterarParagrafos() {
     elementoP.style = "color: ".concat(txtCorDoObjeto.value, ";");
   }
 }
+
+function exibirNome() {
+  const txtNome = document.getElementById("txtNome");
+
+  console.log(txtNome.value);
+}
+
+function AlterarCorBotao(idElemento) {
+  const btExibirNome = document.getElementById(idElemento);
+  btExibirNome.style = "background-color: red; color: white;";
+}
+
+function VoltarCorBotao(idElemento) {
+  const btExibirNome = document.getElementById(idElemento);
+  btExibirNome.style = "background-color: gray;";
+}
