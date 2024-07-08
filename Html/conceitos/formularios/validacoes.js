@@ -35,3 +35,5 @@ function validarSomenteNumeros(idTxtElemento, idLblErro, mensagemErro) {
 
   return retorno;
 }
+
+console.log('Rafael Dentro de validacoes.js')

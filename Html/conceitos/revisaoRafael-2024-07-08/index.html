@@ -22,13 +22,9 @@
         function btSalvar() {
 
             validarVazio('txtNome', 'lblErroNome', 'Preencha o campo nome')
-            validarVazio('txtEndereco', 'lblErroEndereco', 'Preencha o campo endereço')
-            validarVazio('txtCPF', 'lblErroCPF', 'Preencha o campo CPF')
-            validarVazio('txtUF', 'lblErroUF', 'Preencha o campo UF')
-            // validarVazio('optEstudante', 'lblErroEstudante', 'Preencha o campo Estudante')
-            validarSomenteNumeros('txtNumero', 'lblErroNumero', 'Campo número deve ser preenchido e diferente de 0')
 
         }
+
 
         function permitirNumeros(ev) {
             const tecla = ev.key
@@ -47,10 +43,17 @@
             console.log('Aconteceu o On Input')
         }
 
-        console.log('Rafael dentro de RafaelComValidacao.html')
+        function bloquear(event) {
+            console.log(event.repeat)
+            if (event.repeat) {
+                event.preventDefault()
+            }
+            // console.log(event.key)
+            // event.preventDefault()
+        }
+
 
     </script>
-
 </head>
 
 <body>
@@ -67,7 +70,7 @@
     <br />
     <div class="inputbox">
         <label for="txtCPF">CPF:</label>
-        <input type="text" id="txtCPF" maxlength="11" placeholder="Obrigatório" autofocus />
+        <input type="text" id="txtCPF" maxlength="11" placeholder="Obrigatório" onkeypress="bloquear(event)" />
         <label for="txtCPF" id="lblErroCPF"></label>
     </div>
     <br />
@@ -148,9 +151,8 @@
 
 
         <label for="txtEstudante">Estudante:</label>
-        <input type="radio" name="optEstudante" id="optEstudante" value="N">Não
-        <input type="radio" name="optEstudante" id="optEstudante" value="S">Sim
-        <label for="txtEstudante" id="lblErroEstudante"></label>
+        <input type="radio" name="optEstudante" value="S">Sim
+        <input type="radio" name="optEstudante" value="N">Não /
 
         <label for="txtEstudante">TRABALHA:</label>
         <input type="radio" name="optTrabalhador" value="S">Sim
