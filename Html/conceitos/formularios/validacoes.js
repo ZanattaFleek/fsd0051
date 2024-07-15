@@ -1,3 +1,25 @@
+function validarVazioRadio(idRadioElemento, idLblErro, mensagemErro) {
+  let retorno = true;
+
+  const lblErro = document.getElementById(idLblErro);
+
+  const txtCampo = document.querySelector(
+    'input[id="'.concat(idRadioElemento, '"]:checked')
+  );
+
+  if (!txtCampo) {
+    retorno = false;
+  }
+
+  if (retorno) {
+    lblErro.innerHTML = "";
+  } else {
+    lblErro.innerHTML = mensagemErro;
+  }
+
+  return retorno;
+}
+
 function validarVazio(idTxtElemento, idLblErro, mensagemErro) {
   let retorno = true;
 
@@ -35,5 +57,3 @@ function validarSomenteNumeros(idTxtElemento, idLblErro, mensagemErro) {
 
   return retorno;
 }
-
-console.log('Rafael Dentro de validacoes.js')
