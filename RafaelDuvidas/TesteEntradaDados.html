@@ -1,0 +1,52 @@
+<html>
+<script>
+    function btSalvar() {
+        const txtNome = document.getElementById('txtNome')
+
+        const txtEstadoCivil = document.getElementById('txtEstadoCivil')
+
+        console.log(txtEstadoCivil.value)
+
+        /*
+        const txtEstudanteSim = document.getElementById('txtEstudanteSim')
+
+        console.log('txtEstudanteSim', txtEstudanteSim.checked)
+
+        const optEstudante = document.getElementsByName('optEstudante')
+
+        console.log('txtNome.value', txtNome.value)
+        console.log('optEstudante[0].value', optEstudante[0].value)
+        console.log('optEstudante[1].value', optEstudante[1].value)
+
+        console.log('optEstudante[0].checked', optEstudante[0].checked)
+        console.log('optEstudante[1].checked', optEstudante[1].checked)
+        */
+
+        console.log('Forma "em Uma Linha" ', document.querySelector('input[name="optEstudante"]:checked').value);
+    }
+</script>
+
+<body>
+    <label>Nome:</label>
+    <input type="text" id="txtNome" />
+
+    <label for="txtEstudante">Estudante:</label>
+    <input type="radio" name="optEstudante" value="S" checked id="txtEstudanteSim">Sim
+    <input type="radio" name="optEstudante" value="N">Não
+
+    <div class="inputbox">
+        <label for="txtEstadoCivil">Estado do Civil:</label>
+        <select id="txtEstadoCivil">
+            <option value=""></option>
+            <option value="Solteiro">Solteiro(a)</option>
+            <option value="Casado">Casado(a)</option>
+            <option value="Divorciado">Divorciado(a)</option>
+            <option value="Viuvo">Viúvo(a)</option>
+        </select>
+        <label class="mensagemErro" for="txtEstadoCivil" id="lblErroEstadoCivil"></label>
+    </div>
+
+    <input type="button" onclick="btSalvar()" value="Salvar" />
+</body>
+
+</html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Chrome, Safari, Edge, Opera */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+
+    <script src="./validacoes.js"></script>
+
+    <script src="./index.js"></script>
+
+</head>
+
+<body>
+
+    <h1>1º Exercício sobre HTML</h1>
+    <h2>Preenche os dados abaixo:</h2>
+
+    <div class="inputbox">
+        <label class="clsLabelCampo" for="txtNome">Nome:</label>
+        <input class= "clsInputText" type="text" id="txtNome" />
+        <label class="mensagemErro" for="txtNome" id="lblErroNome"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCPF">CPF:</label>
+        <input type="text" id="txtCPF" maxlength="11" placeholder="Somente Numeros" autofocus
+            onkeypress="permitirNumeros(event)" />
+        <label class="mensagemErro" for="txtCPF" id="lblErroCPF"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEndereco">Endereço:</label>
+        <input type="text" id="txtEndereco">
+        <label class="mensagemErro" for="txtEndereco" id="lblErroEndereco"></label>
+        <label for="txtNumero">Numero:</label>
+        <input type="number" id="txtNumero" oninput="exibirOnInput()" onkeypress="permitirNumeros(event)"
+            onchange="exibirOnChange()">
+        <label class="mensagemErro" for="txtNumero" id="lblErroNumero"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtComplemento">Complemento:</label>
+        <input type="text" id="txtComplemento">
+        <label class="mensagemErro" for="txtComplemento" id="lblErroComplemento"></label>
+        <label for="txtBairro">Bairro:</label>
+        <input type="text" id="txtBairro">
+        <label class="mensagemErro" for="txtBairro" id="lblErroBairro"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCidade">Cidade:</label>
+        <input type="text" id="txtCidade">
+        <label class="mensagemErro" for="txtCidade" id="lblErroCidade"></label>
+        <label for="txtUF">Selecione o Estado:</label>
+        <select id="txtUF">
+            <option value=""></option>
+            <option value="AC">Acre</option>
+            <option value="AL">Alagoas</option>
+            <option value="AP">Amapá</option>
+            <option value="AM">Amazonas</option>
+            <option value="BA">Bahia</option>
+            <option value="CE">Ceará</option>
+            <option value="DF">Distrito Federal</option>
+            <option value="ES">Espirito Santo</option>
+            <option value="GO">Goiás</option>
+            <option value="MA">Maranhão</option>
+            <option value="MS">Mato Grosso do Sul</option>
+            <option value="MT">Mato Grosso</option>
+            <option value="MG">Minas Gerais</option>
+            <option value="PA">Pará</option>
+            <option value="PB">Paraíba</option>
+            <option value="PR">Paraná</option>
+            <option value="PE">Pernambuco</option>
+            <option value="PI">Piauí</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="RN">Rio Grande do Norte</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="RO">Rondônia</option>
+            <option value="RR">Roraima</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="SE">Sergipe</option>
+            <option value="TO">Tocantins</option>
+        </select>
+        <label class="mensagemErro" for="txtUF" id="lblErroUF"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtCep">Cep:</label>
+        <input type="textCep" id="txtCep" maxlength="9" placeholder="35500-000" autofocus oninput="exibirOnInput()"
+            onkeypress="permitirNumeros(event)" onchange="exibirOnChange()">
+        <label class="mensagemErro" for="txtCep" id="lblErroCep"></label>
+        <label for="txtTelefone">Telefone:</label>
+        <input type="tel" id="txtTelefone" onkeypress="permitirNumeros(event)">
+        <label class="mensagemErro" for="txtTelefone" id="lblErroTelefone"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtIdade">Idade:</label>
+        <input type="text" id="txtIdade" oninput="exibirOnInput()" onkeypress="permitirNumeros(event)"
+            onchange="exibirOnChange()">
+        <label class="mensagemErro" for="txtIdade" id="lblErroIdade"></label>
+
+
+        <label for="txtEstudante">Estudante:</label>
+        <input type="radio" name="optEstudante" value="S">Sim
+        <input type="radio" name="optEstudante" value="N">Não /
+
+        <label for="txtTrabalha">TRABALHA:</label>
+        <input type="radio" name="optTrabalhador" value="S">Sim
+        <input type="radio" name="optTrabalhador" value="N">Não
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtRendaMensal">Renda Mensal:</label>
+        <input type="text" id="txtRendaMensal" onkeypress="permitirNumeros(event)">
+        <laber class="mensagemErro" for=" txtRendaMensal" id="lblErroRendaMensal"></laber>
+        <label for="txtDataDeNascimento">Data de Nascimento:</label>
+        <input type="date" id="txtDataDeNascimento">
+        <label class="mensagemErro" for="txtDataDeNascimento" id="lblErroDataDeNascimento"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEstadoCivil">Estado do Civil:</label>
+        <select id="txtEstadoCivil">
+            <option value=""></option>
+            <option value="S">Solteiro(a)</option>
+            <option value="C">Casado(a)</option>
+            <option value="D">Divorciado(a)</option>
+            <option value="V">Viúvo(a)</option>
+        </select>
+        <label class="mensagemErro" for="txtEstadoCivil" id="lblErroEstadoCivil"></label>
+    </div>
+    <br />
+    <br />
+    <div class="inputbox">
+        <label for="txtEmail">Email:</label>
+        <input type="email" id="txtEmail" maxlength="60" size='65'>
+        <label class="mensagemErro" for="txtEmail" id="lblErroEmail"></label>
+    </div>
+    <br />
+    <br />
+    <div class="row">
+        <button onclick="btSalvar()">Salvar</button>
+    </div>
+
+</body>
+
+</html>

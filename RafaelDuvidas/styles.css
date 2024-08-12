@@ -1,0 +1,44 @@
+body {
+  background-color: bisque;
+}
+
+h1 {
+  text-align: center;
+  color: blue;
+  text-shadow: 3px 3px 3px yellow;
+}
+
+h2 {
+  text-align: justify;
+  color: rgb(43, 42, 42);
+  padding: 3px;
+  text-shadow: 1px 1px 1px red;
+}
+
+.label {
+  font-family: Verdana;
+}
+
+.inputbox {
+  color: green;
+  font-style: normal;
+  font-weight: 550;
+  border: none;
+  display: block;
+  font-display: arial;
+  padding: 2px 2px;
+  text-align: justify;
+  font-size: 18px;
+  margin: 1px 4px;
+  cursor: auto;
+}
+
+.clsLabelCampo {
+    display: block;
+}
+
+.mensagemErro {
+  color: red;
+  font-style: italic;
+  display: block;
+}
