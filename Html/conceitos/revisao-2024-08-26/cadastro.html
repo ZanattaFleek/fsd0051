@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <!-- Importações, título, metas, e "códigos" que devem ser carregados antes do conteúdo da página-->
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" type="text/css" href="cadastro.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="impressao.css" media="print" />
+
+    <script src="./cadastro.js"></script>
+</head>
+
+<body>
+    <div class="formulario">
+        <!-- Corpo do HTML / Conteúdo do HTML -->
+        <label class="nomeCampo" id="lblNome">Nome:</label>
+        <input class="campo" type="text" id="txtNome">
+
+        <label class="nomeCampo" id="lblTelefone">Telefone:</label>
+        <input class="campo" type="text" id="txtTelefone">
+
+        <label class="nomeCampo" id="lblCep">Cep:</label>
+        <input class="campo" type="text" id="txtCep" onkeyup="onKeyUpCep()">
+
+        <label class="nomeCampo" id="lblLogradouro">Logradouro:</label>
+        <input class="campo" type="text" id="txtLogradouro" disabled>
+
+        <label class="nomeCampo" id="lblCidade">Cidade:</label>
+        <input class="campo" type="text" id="txtCidade" disabled>
+
+        <label class="nomeCampo" id="lblBairro">Bairro:</label>
+        <input class="campo" type="text" id="txtBairro" disabled>
+
+        <button class="btPadrao" type="button">Gravar Cadastro</button>
+
+    </div>
+</body>
+
+<footer>
+    <!-- Rodapé - Carregado após o conteúdo da página "no blocking" -->
+</footer>
+
+</html>
