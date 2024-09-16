@@ -1,0 +1,16 @@
+{
+  "name": "iniciots",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "executar": "nodemon --watch ./src/**/*.ts --exec ts-node src/index.ts -e ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "nodemonConfig": {
+    "ignore": ["**/test/**", "**/docs/**"]
+  }
+}
