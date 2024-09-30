@@ -1,20 +1,18 @@
-import { EstadoCivil, PessoaInterface } from "./interfaces/pessoaInterfaces"
+import ClsValidacaoCPF from "./validacoes/ClsValidacaoCPF";
 
-let cadastro: PessoaInterface = {
-    idade: 26,
-    nome: 'Zanatta',
-    estadoCivil: EstadoCivil.Casado,
-    profissao: 'Desenvolvedor',
-    filhos: [{
-        estudante: true,
-        idade: 25,
-        nome: 'Gabriela'
-    },
-    {
-        estudante: true,
-        idade: 21,
-        nome: 'Marcela'
-    }]
-}
+let clsValidacaoCPF = new ClsValidacaoCPF();
 
-console.log('Nome do Pai / Mãe: ', cadastro.nome, ' tem ', cadastro.filhos.length, ' filhos')
+const testesCPF: Array<string> = [
+    '845-605-183.78', '84560518378',
+    '845.605.183-78', '84560518387',
+    '845.605.183-87', 'abc.def.ghi-jk',
+    '123.456.789-00'
+]
+
+testesCPF.forEach((cpf) => {
+    // console.log(`CPF: ${cpf} - Válido: ${clsValidacaoCPF.validarCPF(cpf)}`);
+    console.log('===================')
+    console.log('CPF:', cpf, ' - Válido:', clsValidacaoCPF.validarCPF(cpf));
+    console.log('===================')
+})
+
