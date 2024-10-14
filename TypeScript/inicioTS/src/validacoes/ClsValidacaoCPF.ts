@@ -7,8 +7,6 @@ export default class ClsValidacaoCPF {
     /**
      * Valida um CPF de acordo com as regras da Receita Federal
      * @param cpf CPF a ser validado - Pode estar formatado ou somente números
-     * 18803927808
-     * 188.039.278-08
      */
     public validarCPF(cpf: string): boolean {
 
@@ -31,25 +29,38 @@ export default class ClsValidacaoCPF {
 
         const digitoCalculado1: string = this.calcularDigitoVerificador(novePrimeirosDigitos);
 
-        return true
+        const digitoCalculado2: string = this.calcularDigitoVerificador(novePrimeirosDigitos.concat(digitoCalculado1));
 
+        return digitoFornecido1 == digitoCalculado1 && digitoFornecido2 == digitoCalculado2
     }
 
     private calcularDigitoVerificador(sequenciaNumerica: string): string {
 
         const inicio: number = sequenciaNumerica.length + 1
 
+        let soma: number = 0
+
         for (let multiplicador = inicio; multiplicador >= 2; multiplicador--) {
 
             const indice = inicio - multiplicador
             const digito: string = sequenciaNumerica[indice]
 
-            console.log('Digito: ', digito)
+            soma += parseInt(digito) * multiplicador
+
+            // console.log('Digito: ', digito, 'multiplicador', multiplicador)
             // const digito: string = sequenciaNumerica.substring(indice, indice + 1)
 
         }
 
-        return ''
+        const restoDivisao: number = soma % 11
+
+        let digito: number = 0
+
+        if (restoDivisao >= 2) {
+            digito = 11 - restoDivisao
+        }
+
+        return digito.toString()
 
     }
 
