@@ -1,25 +1,31 @@
 export default class ClsPessoa {
 
-    private nome: string = ''
+    //Propriedade
+    private nome: string
 
-    public setNome(novoNome: string): void {
-        this.nome = novoNome
+    //Propriedade
+    public sobreNome: string = 'de Paula'
+
+    //Propriedade
+    protected idade: number = 30
+
+    public constructor(nomePadrao: string) {
+        this.nome = nomePadrao
     }
 
-    public getNome(): string {
-        return this.nome
+    public atribuirNomeESobrenome(nome: string, sobreNome: string): void {
+        this.nome = nome.toUpperCase()
+        this.sobreNome = sobreNome.toUpperCase()
     }
 
-    public transformarEmMaiusculo(): void {
+    // Método
+    public getNomeCompleto(): string {
+        return this.nome.concat(' ', this.sobreNome)
+    }
+
+    protected transformarNomeEmMaiusculo(): void {
         this.nome = this.nome.toUpperCase()
-    }
-
-    public validacao(): boolean {
-        if (this.nome.length > 0) {
-            return true
-        } else {
-            return false
-        }
+        this.sobreNome = this.sobreNome.toUpperCase()
     }
 
 }

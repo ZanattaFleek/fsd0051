@@ -1,18 +1,11 @@
-import ClsValidacaoCPF from "./validacoes/ClsValidacaoCPF";
+import { ClsCalculadoraCientifica } from "./calculadora/ClsCalculadoraCientifica";
+import ClsCalculadoraPadrao from "./calculadora/ClsCalculadoraPadrao";
 
-let clsValidacaoCPF = new ClsValidacaoCPF();
+let calculadora = new ClsCalculadoraPadrao(15, 20);
+let calculadoraCientifica = new ClsCalculadoraCientifica(5, 3)
 
-const testesCPF: Array<string> = [
-    '845-605-183.78', '84560518378',
-    '845.605.183-78', '84560518387',
-    '845.605.183-87', 'abc.def.ghi-jk',
-    '123.456.789-00', '096.111.156-95', '019.475.196-11'
-]
+calculadora.somar()
+console.log(calculadora.getResultado())
 
-testesCPF.forEach((cpf) => {
-    // console.log(`CPF: ${cpf} - Válido: ${clsValidacaoCPF.validarCPF(cpf)}`);
-    console.log('===================')
-    console.log('CPF:', cpf, ' - Válido:', clsValidacaoCPF.validarCPF(cpf));
-    console.log('===================')
-})
-
+calculadoraCientifica.potencia()
+console.log(calculadoraCientifica.getResultado())
