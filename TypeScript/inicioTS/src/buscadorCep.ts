@@ -1,20 +1,53 @@
-console.log('A - Executando Buscador de CEP')
+import ClsBuscarCEP, { rsCEPInterface } from "./CEP/ClsBuscarCEP";
 
-fetch('https://viacep.com.br/ws/01001000/json/').then(rs => {
+const clsBuscarCEP: ClsBuscarCEP = new ClsBuscarCEP()
 
-    return rs.json()
+let promessas: Array<Promise<rsCEPInterface>> = []
 
-}).then(rsCEP => {
+promessas.push(clsBuscarCEP.buscar('35500324'))
+promessas.push(clsBuscarCEP.buscar('35500010'))
+promessas.push(clsBuscarCEP.buscar('35500173'))
+promessas.push(clsBuscarCEP.buscar('35500001'))
+promessas.push(clsBuscarCEP.buscar('35500069'))
 
-    console.log(rsCEP)
+Promise.all(promessas).then(rs => {
+
+    console.log('CEP 35500324 - ', rs[0])
+    console.log('CEP 35500010 - ', rs[1])
+    console.log('CEP 35500173 - ', rs[2])
+    console.log('CEP 35500001 - ', rs[3])
+    console.log('CEP 35500069 - ', rs[4])
 
 }).catch(erro => {
 
-    console.log('C - Erro ao buscar CEP: ', erro)
+    console.log(erro)
 
 })
 
-console.log('D - Final do Buscador de CEP')
 
-// Non Blocking
 
+
+
+/*
+
+clsBuscarCEP.buscar('35500324').then(rs => {
+
+    console.log('Primeiro: 35500324 - ', rs)
+
+    clsBuscarCEP.buscar('35500010').then(rs => {
+
+        console.log('Segundo: 35500010 - ', rs)
+
+    }).catch(erro => {
+
+        console.log(erro)
+
+    })
+
+}).catch(erro => {
+
+    console.log(erro)
+
+})
+
+*/
