@@ -1,25 +1,25 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 class ClsPessoa {
-    constructor() {
-        this.nome = '';
+    constructor(nomePadrao) {
+        //Propriedade
+        this.sobreNome = 'de Paula';
+        //Propriedade
+        this.idade = 30;
+        this.nome = nomePadrao;
     }
-    setNome(novoNome) {
-        this.nome = novoNome;
+    atribuirNomeESobrenome(nome, sobreNome) {
+        this.nome = nome.toUpperCase();
+        this.sobreNome = sobreNome.toUpperCase();
     }
-    getNome() {
-        return this.nome;
+    // Método
+    getNomeCompleto() {
+        return this.nome.concat(' ', this.sobreNome);
     }
-    transformarEmMaiusculo() {
+    transformarNomeEmMaiusculo() {
         this.nome = this.nome.toUpperCase();
-    }
-    validacao() {
-        if (this.nome.length > 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        this.sobreNome = this.sobreNome.toUpperCase();
     }
 }
 exports.default = ClsPessoa;
+//# sourceMappingURL=ClsPessoa.js.map

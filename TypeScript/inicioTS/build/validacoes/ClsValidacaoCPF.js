@@ -11,8 +11,6 @@ class ClsValidacaoCPF {
     /**
      * Valida um CPF de acordo com as regras da Receita Federal
      * @param cpf CPF a ser validado - Pode estar formatado ou somente números
-     * 18803927808
-     * 188.039.278-08
      */
     validarCPF(cpf) {
         if (this.clsFormatacao.validarFormatoCPF(cpf)) {
@@ -28,17 +26,26 @@ class ClsValidacaoCPF {
         const digitoFornecido1 = cpfNumeros[9];
         const digitoFornecido2 = cpfNumeros[10];
         const digitoCalculado1 = this.calcularDigitoVerificador(novePrimeirosDigitos);
-        return true;
+        const digitoCalculado2 = this.calcularDigitoVerificador(novePrimeirosDigitos.concat(digitoCalculado1));
+        return digitoFornecido1 == digitoCalculado1 && digitoFornecido2 == digitoCalculado2;
     }
     calcularDigitoVerificador(sequenciaNumerica) {
         const inicio = sequenciaNumerica.length + 1;
+        let soma = 0;
         for (let multiplicador = inicio; multiplicador >= 2; multiplicador--) {
             const indice = inicio - multiplicador;
             const digito = sequenciaNumerica[indice];
-            console.log('Digito: ', digito);
+            soma += parseInt(digito) * multiplicador;
+            // console.log('Digito: ', digito, 'multiplicador', multiplicador)
             // const digito: string = sequenciaNumerica.substring(indice, indice + 1)
         }
-        return '';
+        const restoDivisao = soma % 11;
+        let digito = 0;
+        if (restoDivisao >= 2) {
+            digito = 11 - restoDivisao;
+        }
+        return digito.toString();
     }
 }
 exports.default = ClsValidacaoCPF;
+//# sourceMappingURL=ClsValidacaoCPF.js.map

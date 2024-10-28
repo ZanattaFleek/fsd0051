@@ -8,3 +8,4 @@ var EstadoCivil;
     EstadoCivil[EstadoCivil["Divorciado"] = 2] = "Divorciado";
     EstadoCivil[EstadoCivil["Viuvo"] = 3] = "Viuvo";
 })(EstadoCivil = exports.EstadoCivil || (exports.EstadoCivil = {}));
+//# sourceMappingURL=pessoaInterfaces.js.map

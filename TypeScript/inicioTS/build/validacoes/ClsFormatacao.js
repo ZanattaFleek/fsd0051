@@ -20,3 +20,4 @@ class ClsFormatacao {
     }
 }
 exports.default = ClsFormatacao;
+//# sourceMappingURL=ClsFormatacao.js.map
