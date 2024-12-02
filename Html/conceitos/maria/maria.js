@@ -1,0 +1,1 @@
+console.log('Dentro do Maria.js')

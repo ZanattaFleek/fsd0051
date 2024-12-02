@@ -40,3 +40,7 @@ function cpfValido(cpf) {
 
     return true;
 }
+
+function btClickValidarCPF() {
+    console.log('Rodrigo.....')
+}

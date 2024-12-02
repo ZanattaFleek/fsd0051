@@ -1,0 +1,8 @@
+.centralizar {
+  background-color: red;
+  text-align: center;
+  width: 100%;
+  height: 180px;
+  font-size: large;
+  margin: auto;
+}
