@@ -1,6 +1,9 @@
 import ClsLerCSV from "./ClsLerCSV";
+import ClsProcessarRegistros from "./ClsProcessarRegistros";
 
 const clsLerArquivo: ClsLerCSV = new ClsLerCSV('src\\leituraArquivo\\Dados.csv')
+
+const clsProcessarRegistros: ClsProcessarRegistros = new ClsProcessarRegistros()
 
 clsLerArquivo.realizarLeitura().then(rsLeitura => {
 
@@ -8,7 +11,7 @@ clsLerArquivo.realizarLeitura().then(rsLeitura => {
 
         const registros = clsLerArquivo.registros()
 
-        console.log('Registros Lidos: ', registros, registros.length)
+        clsProcessarRegistros.setarRegistros(registros)
 
     } else {
         console.log('Erro na Leitura do Arquivo....')
