@@ -1,5 +1,3 @@
-'use client'
-
 interface PropsInterface {
    params: Promise<{ nomeAluno: string }>
 }
@@ -10,7 +8,7 @@ export default async function nome({ params }: PropsInterface) {
 
    return (
       <>
-         <p>O Nome Fornecido é: {nome}</p>
+         <p>O Nome Fornecido é: </p>
       </>
    )
 }
