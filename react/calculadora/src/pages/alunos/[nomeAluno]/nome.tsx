@@ -1,14 +1,10 @@
-interface PropsInterface {
-   params: Promise<{ nomeAluno: string }>
-}
+export default function nome({ nomeAluno }: { nomeAluno: string }) {
 
-export default async function nome({ params }: PropsInterface) {
-
-   const nome = (await params).nomeAluno
+   console.log(nomeAluno)
 
    return (
       <>
-         <p>O Nome Fornecido é: </p>
+         <p>O Nome Fornecido é:</p>
       </>
    )
 }
