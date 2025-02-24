@@ -27,7 +27,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <p className="azul">Conteúdo de Layout Dentro do APP</p>
         {children}
       </body>
     </html>
